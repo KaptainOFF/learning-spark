@@ -1,11 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign-in</title>
-</head>
-<body>
-    <p>Welcome {{ username }}! </p>
+{{#partial "title"}}Signed in!{{/partial}}
 
-</body>
-</html>
+{{#partial "content"}}
+ <p>   Welcome {{ username }}! </p>
+{{/partial}}
+
+{{> base.hbs}}

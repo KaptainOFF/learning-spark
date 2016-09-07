@@ -1,5 +1,7 @@
 package kapitanov;
 
+import kapitanov.model.CourseIdeaDAO;
+import kapitanov.model.SimpleCourseIdeaDAO;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -8,14 +10,14 @@ import java.util.Map;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.Spark.staticFileLocation;
 
 public class Main {
     public static void main(String[] args) {
-        /* MVC -
-            (req, res) is the controller - controls the flow of the App
-            model - In this case a HashMap - stores and updates data when necessary
-            view - refers to index.hbs - handles the output in the browser.
-         */
+        staticFileLocation("/public");
+
+        CourseIdeaDAO dao = new SimpleCourseIdeaDAO();
+
         get("/", (req, res) -> {
             Map<String,String> model = new HashMap<String, String>();
             model.put("username", req.cookie("username"));
