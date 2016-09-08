@@ -36,6 +36,13 @@
             <version>2.3</version>
         </dependency>
 
+        <!-- Slugify dependency added -->
+        <dependency>
+            <groupId>com.github.slugify</groupId>
+            <artifactId>slugify</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
